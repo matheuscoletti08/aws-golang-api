@@ -1,0 +1,11 @@
+services:
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./.local:/var/task
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - SERVICES=lambda,apigateway,sqs,dynamodb
+      - DEBUG=0
