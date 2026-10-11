@@ -12,12 +12,14 @@ func main(){
 }
 
 
-func handler(requests events.APIGatewayProxyRequest)
-	(events.APIGatewayProxyResponse, error){
+func handler(requests events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error){
 		fmt.Println("request received")
 
-		response := events.APIGatewayProxyResponse(
-			Status: 200,
-		)
+		response := events.APIGatewayProxyResponse{
+			Body: 		 "Lambda Rodando",
+			StatusCode: 200,
+		}
+
 		return response, nil
+
 	}
